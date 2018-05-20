@@ -11,7 +11,7 @@ namespace PD_2
 			do
 			{
 				double aInput, bInput;
-                
+				Console.WriteLine();
 				Console.WriteLine("1: a+b, 2: a-b, 3: a*b, 4: a/b, 5: a^b, 6: triangle, 7: a+-b array, 0: exit");
 				Console.WriteLine("---------------------------------------------------------------------------");
 				       
@@ -26,7 +26,7 @@ namespace PD_2
 
                         Console.Write("Ievadi b: ");
                         bInput = Parbaude.Readouble();
-						Console.WriteLine(Saskaiti(aInput, bInput));
+						Console.WriteLine("{0} + {1} = {2}", aInput, bInput, Saskaiti(aInput, bInput));
 						break;
                         
 					case 2:
@@ -35,7 +35,7 @@ namespace PD_2
 
                         Console.Write("Ievadi b: ");
                         bInput = Parbaude.Readouble();
-						Console.WriteLine(Atnem(aInput, bInput));
+						Console.WriteLine("{0} - {1} = {2}", aInput, bInput, Atnem(aInput, bInput));
 						break;
 
 					case 3:
@@ -45,7 +45,7 @@ namespace PD_2
                         Console.Write("Ievadi b: ");
                         bInput = Parbaude.Readouble();
 						double output = DoMath.Reizini(aInput, bInput);
-						Console.WriteLine("DoMath reizināšana: {0}", output);
+						Console.WriteLine("{0} * {1} = {2}", aInput, bInput, output);
 						break;
 
 					case 4:
@@ -56,7 +56,7 @@ namespace PD_2
                         bInput = Parbaude.Readouble();
 
 						output = DoMath.Sadali(aInput, bInput);
-						Console.WriteLine("DoMath dalīšana: {0}", output);
+						Console.WriteLine("{0} / {1} = {2}", aInput, bInput, output);
 						break;
 
 					case 5:
@@ -68,7 +68,7 @@ namespace PD_2
 						int pakape = Parbaude.Readint();
 
 						output = DoMath.Kapini(aInput, pakape);
-						Console.WriteLine("DoMath kāpināšana: {0}", output);
+						Console.WriteLine("{0} ^ {1} = {2}", aInput, pakape, output);
 						break;
 
 					case 6:
@@ -124,7 +124,7 @@ namespace PD_2
 						Console.Write("Ievadi + vai - : ");
 						masivs[2] = Console.ReadLine();
 
-						Console.WriteLine("Rezultāts ir: {0}", SaskaitiMasivu(masivs[0], masivs[1], masivs[2]));
+						Console.WriteLine("{0} {2} {1} = {3}", masivs[0], masivs[1], masivs[2], SaskaitiMasivu(masivs[0], masivs[1], masivs[2]));
 						break;
                         
 					case 0:

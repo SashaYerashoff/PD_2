@@ -31,19 +31,19 @@ namespace PD_2
 
 
 
-		public static double Readouble() //Ievada funkcija un pārbaude uz Int32
+		public static double Readouble() //Ievada funkcija un pārbaude uz double
         {
 			double checkOk; // ar šo mainīgo atgriežam funkcijas darbības rezultātu
 			double output;  //šeit glabāsim starprezultātu ja TryParse atgriezīs "true"
             string input; // ar šo mainīgo nolasam ievadu
             string mistake = "It's almost certainly not a double!"; // Teksts paziņojumam par kļūdu (šīs mainīgais nav obligāts)
             string whatToDo = "Please, try to input the digit - it certainly shoud work then: "; // Teksts kas paskaidro, ko vajag ievadīt (šīs mainīgais nav obligāts)
-            bool result; // TryParse pārbaudīs mūsu ievadu un ja tas būs Int32, atgriezīs true 
+            bool result; // TryParse pārbaudīs mūsu ievadu un ja tas būs double, atgriezīs true 
 
             input = Console.ReadLine(); // Ievads
 			result = double.TryParse(input, out output); // Pārbaude
 
-            while (result == false) //Kamēr netiks saņemts Int32, cikls ziņos par kļūdu un prasīs jaunu ievadu  
+            while (result == false) //Kamēr netiks saņemts double, cikls ziņos par kļūdu un prasīs jaunu ievadu  
             {
                 Console.WriteLine(mistake); //izvada paziņojumu par kļūdu
                 Console.Write(whatToDo);    //Piedāvā vēlreiz ievadīt skaitli
@@ -55,6 +55,6 @@ namespace PD_2
             checkOk = output; //Ja ievadā bija skaitlis (TryParse == true) tad piešķiram to funkcijas izvadam
 
             return checkOk; // funkcijas izvads
-        } // Šīs ir Readint() funkcijas beigas
+        } // Šīs ir Readouble() funkcijas beigas
     }
 }
