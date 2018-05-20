@@ -36,7 +36,7 @@ namespace PD_2
 			double checkOk; // ar šo mainīgo atgriežam funkcijas darbības rezultātu
 			double output;  //šeit glabāsim starprezultātu ja TryParse atgriezīs "true"
             string input; // ar šo mainīgo nolasam ievadu
-            string mistake = "It's almost certainly not an integer!"; // Teksts paziņojumam par kļūdu (šīs mainīgais nav obligāts)
+            string mistake = "It's almost certainly not a double!"; // Teksts paziņojumam par kļūdu (šīs mainīgais nav obligāts)
             string whatToDo = "Please, try to input the digit - it certainly shoud work then: "; // Teksts kas paskaidro, ko vajag ievadīt (šīs mainīgais nav obligāts)
             bool result; // TryParse pārbaudīs mūsu ievadu un ja tas būs Int32, atgriezīs true 
 
