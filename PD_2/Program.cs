@@ -4,46 +4,70 @@ namespace PD_2
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
 			int selector;
 
 			do
 			{
-				Console.WriteLine("izvēlne: 1 - saskaitīt, 2 - atņemt, 3 - reizināt, 4 - dalīt, 5 - kāpināt, 6 - Trīssturis, 7 - masīvs, 0 - iziet");
+				double aInput, bInput;
+                
+				Console.WriteLine("1: a+b, 2: a-b, 3: a*b, 4: a/b, 5: a^b, 6: triangle, 7: a+-b array, 0: exit");
+				Console.WriteLine("---------------------------------------------------------------------------");
+				       
 				selector = Convert.ToInt16(Console.ReadLine());
 				MathClass DoMath = new MathClass();
-
-				switch (selector)
+                
+                switch (selector)
 				{
-					case 1:
-						Console.WriteLine(Saskaiti(2, 4.4));
-						break;
+					case 1:        
+						Console.Write("Ievadi a: ");
+                        aInput = Parbaude.Readouble();
 
+                        Console.Write("Ievadi b: ");
+                        bInput = Parbaude.Readouble();
+						Console.WriteLine(Saskaiti(aInput, bInput));
+						break;
+                        
 					case 2:
-						Console.WriteLine(Atnem(-2, -10));
+						Console.Write("Ievadi a: ");
+                        aInput = Parbaude.Readouble();
+
+                        Console.Write("Ievadi b: ");
+                        bInput = Parbaude.Readouble();
+						Console.WriteLine(Atnem(aInput, bInput));
 						break;
 
 					case 3:
-						double output = DoMath.Reizini(3, 4);
+						Console.Write("Ievadi a: ");
+                        aInput = Parbaude.Readouble();
+
+                        Console.Write("Ievadi b: ");
+                        bInput = Parbaude.Readouble();
+						double output = DoMath.Reizini(aInput, bInput);
 						Console.WriteLine("DoMath reizināšana: {0}", output);
 						break;
 
 					case 4:
-						output = DoMath.Sadali(3, 4);
+						Console.Write("Ievadi a: ");
+                        aInput = Parbaude.Readouble();
+
+                        Console.Write("Ievadi b: ");
+                        bInput = Parbaude.Readouble();
+
+						output = DoMath.Sadali(aInput, bInput);
 						Console.WriteLine("DoMath dalīšana: {0}", output);
 						break;
 
 					case 5:
-						double a;
-						int b;
+						
 						Console.Write("Ievadi kāpināmo: ");
-						a = Convert.ToDouble(Console.ReadLine());
+						aInput = Parbaude.Readouble();
 
 						Console.Write("Ievadi kāpinātāju: ");
-						b = Convert.ToInt32(Console.ReadLine());
+						int pakape = Parbaude.Readint();
 
-						output = DoMath.Kapini(a, b);
+						output = DoMath.Kapini(aInput, pakape);
 						Console.WriteLine("DoMath kāpināšana: {0}", output);
 						break;
 
@@ -52,34 +76,34 @@ namespace PD_2
 						double starprez;
 
 						Console.Write("Ievadi AB trisstura malu: ");
-						starprez = Convert.ToDouble(Console.ReadLine());
+						starprez = Parbaude.Readouble();
 
 						while (starprez < 0)
 						{
 							Console.Write("Kļūda! Ievadi lūdzu pozitīvo skaitli: ");
-							starprez = Convert.ToDouble(Console.ReadLine());
+							starprez = Parbaude.Readouble();
 						}
 
 						Trissturis1.SetAB(starprez);
 
 						Console.Write("Ievadi BC trisstura malu: ");
-						starprez = Convert.ToDouble(Console.ReadLine());
+						starprez = Parbaude.Readouble();
 
 						while (starprez < 0)
 						{
 							Console.Write("Kļūda! Ievadi lūdzu pozitīvo skaitli: ");
-							starprez = Convert.ToDouble(Console.ReadLine());
+							starprez = Parbaude.Readouble();
 						}
 
 						Trissturis1.SetBC(starprez);
 
 						Console.Write("Ievadi CD trisstura malu: ");
-						starprez = Convert.ToDouble(Console.ReadLine());
+						starprez = Parbaude.Readouble();;
 
 						while (starprez < 0)
 						{
 							Console.Write("Kļūda! Ievadi lūdzu pozitīvo skaitli: ");
-							starprez = Convert.ToDouble(Console.ReadLine());
+							starprez = Parbaude.Readouble();
 						}
 
 						Trissturis1.SetCD(starprez);
